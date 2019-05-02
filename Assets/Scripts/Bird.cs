@@ -5,17 +5,17 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     // Up force of players input (defined in editor)
-    public float upForce = 200.0f;
+    public float        upForce = 200.0f;
 
     // Checks if the player is dead
-    private bool bIsDead = false;
+    private bool        bIsDead = false;
     // Storing a copy of our rigid body component
     private Rigidbody2D rigidBody2D;
     // Storing a copy of the bird animator
-    private Animator birdAnim;
+    private Animator    birdAnim;
 
     // Start is called before the first frame update
-    void Start()
+    private void        Start()
     {
         // Making sure we have a rigid body component and storing it
         rigidBody2D = GetComponent<Rigidbody2D>();
@@ -24,7 +24,7 @@ public class Bird : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void        Update()
     {
         // If bird is dead end update
         if (bIsDead == true) return;
@@ -42,7 +42,7 @@ public class Bird : MonoBehaviour
     }
 
     // Unity's Collision overide
-    private void OnCollisionEnter2D()
+    private void        OnCollisionEnter2D()
     {
         // Making sure the bird has no velocity on death
         rigidBody2D.velocity = Vector2.zero;

@@ -8,7 +8,7 @@ public class ScrollingObject : MonoBehaviour
     private Rigidbody2D rigidBody2D;
 
     // Start is called before the first frame update
-    void Start()
+    void                Start()
     {
         // Making sure we have a rigid body component and storing it
         rigidBody2D = GetComponent<Rigidbody2D>();
@@ -17,7 +17,7 @@ public class ScrollingObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void                Update()
     {
         // If the game is over stop scrolling
         if (GameControl.instance.BIsGameOver)
