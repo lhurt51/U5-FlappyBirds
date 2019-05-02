@@ -7,9 +7,6 @@ using UnityEngine.SceneManagement;
 // Accessing unitys UI to update score
 using UnityEngine.UI;
 
-// https://www.youtube.com/playlist?list=PLX2vGYjWbI0QBJUI5wI3lBTaz85k37dwo
-// http://bit.ly/flappybirdstyle
-
 public class GameControl : MonoBehaviour
 {
 
