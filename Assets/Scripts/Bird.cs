@@ -42,8 +42,10 @@ public class Bird : MonoBehaviour
     }
 
     // Unity's Collision overide
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D()
     {
+        // Making sure the bird has no velocity on death
+        rigidBody2D.velocity = Vector2.zero;
         // Setting the bird to dead
         bIsDead = true;
         // Calling the dead animation trigger
