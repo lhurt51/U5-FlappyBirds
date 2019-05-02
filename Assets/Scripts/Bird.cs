@@ -11,12 +11,16 @@ public class Bird : MonoBehaviour
     private bool bIsDead = false;
     // Storing a copy of our rigid body component
     private Rigidbody2D rigidBody2D;
+    // Storing a copy of the bird animator
+    private Animator birdAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         // Making sure we have a rigid body component and storing it
         rigidBody2D = GetComponent<Rigidbody2D>();
+        // Making sure we have a animator component and storing it
+        birdAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,6 +36,8 @@ public class Bird : MonoBehaviour
             rigidBody2D.velocity = Vector2.zero;
             // Adding an upward force of up force
             rigidBody2D.AddForce(new Vector2(0, upForce));
+            // Calling the falp animation trigger
+            birdAnim.SetTrigger("Flap");
         }
     }
 
@@ -40,5 +46,9 @@ public class Bird : MonoBehaviour
     {
         // Setting the bird to dead
         bIsDead = true;
+        // Calling the dead animation trigger
+        birdAnim.SetTrigger("Die");
+        // Calling the player died function
+        GameControl.instance.PlayerDied();
     }
 }
