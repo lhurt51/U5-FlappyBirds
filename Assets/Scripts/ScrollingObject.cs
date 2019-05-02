@@ -22,5 +22,8 @@ public class ScrollingObject : MonoBehaviour
         // If the game is over stop scrolling
         if (GameControl.instance.BIsGameOver)
             rigidBody2D.velocity = Vector2.zero;
+        // Setting the velocity.x to the scroll speed
+        else if (!GameControl.instance.BIsGameOver && rigidBody2D.velocity == Vector2.zero)
+            rigidBody2D.velocity = new Vector2(-GameControl.instance.scrollSpeed, 0.0f);
     }
 }

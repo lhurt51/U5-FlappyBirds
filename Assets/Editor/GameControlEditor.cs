@@ -13,9 +13,12 @@ public class GameControllerEditor : Editor
         base.OnInspectorGUI();
         DrawDefaultInspector();
 
+        // Get reference to Game Control script
         GameControl myScript = (GameControl)target;
+        // Create button with reset text
         if (GUILayout.Button("Reset High Score"))
         {
+            // Reset the high score
             myScript.ResetHighScore();
         }
     }

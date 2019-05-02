@@ -26,8 +26,8 @@ public class Bird : MonoBehaviour
     // Update is called once per frame
     private void        Update()
     {
-        // If bird is dead end update
-        if (bIsDead == true) return;
+        // If bird is dead or game is over, end update
+        if (bIsDead == true || GameControl.instance.BIsGameOver) return;
 
         // If User presses space
         if (Input.GetKeyDown(KeyCode.Space))
